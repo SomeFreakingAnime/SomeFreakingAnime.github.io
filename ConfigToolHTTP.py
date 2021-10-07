@@ -30,7 +30,6 @@ htftext = '''<!DOCTYPE HTML>
             <video controls="" autoplay="" name="media" height="480px" width="800px"><source src="'''+vidurl+'''" type="video/mp4"></video>
         </div>
         <hr>
-        <hr>
         <div style="text-align:center">
             <button onclick="location.href='''+viddown+'''" type="button">视频下载</button>
             <button onclick="location.href='https://somefreakinganime.github.io'" type="button">回到主页</button>
