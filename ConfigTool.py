@@ -27,13 +27,7 @@ htftext = '''<!DOCTYPE HTML>
         <h1 style="text-align:center">'''+title+'''</h1>
         <hr>
         <div style="text-align:center">
-            <iframe src="https://bilibili.nico.run/player/?url='''+vidurl+'''" 
-            allowfullscreen="allowfullscreen" 
-            mozallowfullscreen="mozallowfullscreen" 
-            msallowfullscreen="msallowfullscreen" 
-            oallowfullscreen="oallowfullscreen" 
-            webkitallowfullscreen="webkitallowfullscreen" 
-            width="800px" height="480px" frameborder="0"></iframe>
+            <video controls="" autoplay="" name="media" height="480px" width="800px"><source src="'''+vidurl+'''" type="video/mp4"></video>
         </div>
         <hr>
         <div style="text-align:center">
