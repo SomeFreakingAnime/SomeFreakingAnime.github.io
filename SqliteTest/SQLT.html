@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+        <script type="text/javascript" src="sql-asm.js"></script>
+        <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    </head>
+
+    <body>
+
+    </body>
+    <script>
+        //创建sqllite实例，获取数据
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: "DB/test.db",
+                success: function(data) {
+                    console.info("文件读取成功了：" + data);
+//                  var fr = new FileReader();
+                    var uInt8Array = new Uint8Array(data);
+                    var db = new SQL.Database(uInt8Array);
+                    console.log("------db"+db);
+                    var contents = db.exec("SELECT * from test");
+                    console.log("------content"+content);
+                }
+            });
+        });
+    </script>
+
+</html>
