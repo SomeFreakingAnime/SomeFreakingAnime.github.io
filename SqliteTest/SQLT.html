@@ -17,6 +17,10 @@
     <p id="LOADINGTEXT">LOADING</p>
     <script>
         //创建sqllite实例，获取数据
+        let config = {
+        locateFile: () => "https://cdn.bootcdn.net/ajax/libs/sql.js/1.5.0/sql-wasm.wasm",
+      };
+      initSqlJs(config);
         $(function() {
             $.ajax({
                 type: "GET",
