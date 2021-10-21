@@ -3,6 +3,7 @@
   <head>
     <title>Page Title</title>
     <script src="https://cdn.bootcdn.net/ajax/libs/sql.js/1.5.0/sql-wasm.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script>
       // Load sql.js WebAssembly file
       let config = {
@@ -15,5 +16,23 @@
   </head>
   <body>
     <p id="LOADINGTEXT">LOADING</p>
+    <script>
+        //创建sqllite实例，获取数据
+        $(function() {
+            $.ajax({
+                type: "GET",
+                url: "DB/test.db",
+                success: function(data) {
+                    console.info("文件读取成功了：" + data);
+//                  var fr = new FileReader();
+                    var uInt8Array = new Uint8Array(data);
+                    var db = new SQL.Database(uInt8Array);
+                    console.log("------db"+db);
+                    var contents = db.exec("SELECT * from test");
+                    console.log("------content"+content);
+                }
+            });
+        });
+    </script>
   </body>
 </html>
