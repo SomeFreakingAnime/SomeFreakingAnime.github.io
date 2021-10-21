@@ -9,10 +9,11 @@
         locateFile: () => "https://cdn.bootcdn.net/ajax/libs/sql.js/1.5.0/sql-wasm.wasm",
       };
       initSqlJs(config).then(function (SQL) {
-          console.log("sql.js initialized");
-          document.write("sql.js initialized");
+          document.getElementById("LOADINGTEXT").innerHTML = "sql.js initialized";
       });
     </script>
   </head>
-  <body></body>
+  <body>
+    <p id="LOADINGTEXT">LOADING</p>
+  </body>
 </html>
