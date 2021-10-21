@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
   <head>
     <title>Page Title</title>
     <script src="sql-wasm.js"></script>
     <script>
       // Load sql.js WebAssembly file
       let config = {
-        locateFile: () => "/path/to/downloaded/sql-wasm.wasm",
+        locateFile: () => "sql-wasm.wasm",
       };
       initSqlJs(config).then(function (SQL) {
           console.log("sql.js initialized");
