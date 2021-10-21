@@ -1,31 +1,17 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-        <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-        <script type="text/javascript" src="sql.js"></script>
-    </head>
-
-    <body>
-
-    </body>
+<html lang="en">
+  <head>
+    <title>Page Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.5.0/sql-wasm.js"></script>
     <script>
-        //创建sqllite实例，获取数据
-        $(function() {
-            $.ajax({
-                type: "GET",
-                url: "DB/test.db",
-                success: function(data) {
-                    console.info("文件读取成功了：" + data);
-//                  var fr = new FileReader();
-                    var uInt8Array = new Uint8Array(data);
-                    var db = new SQL.Database(uInt8Array);
-                    console.log("------db"+db);
-                    var contents = db.exec("SELECT * from test");
-                    console.log("------content"+content);
-                }
-            });
-        });
+      // Load sql.js WebAssembly file
+      let config = {
+        locateFile: () => "/path/to/downloaded/sql-wasm.wasm",
+      };
+      initSqlJs(config).then(function (SQL) {
+          console.log("sql.js initialized 🎉");
+      });
     </script>
-
+  </head>
+  <body></body>
 </html>
