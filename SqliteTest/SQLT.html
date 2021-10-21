@@ -2,11 +2,11 @@
 <html lang="cn">
   <head>
     <title>Page Title</title>
-    <script src="sql-wasm.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/sql.js/1.5.0/sql-wasm.js"></script>
     <script>
       // Load sql.js WebAssembly file
       let config = {
-        locateFile: () => "sql-wasm.wasm",
+        locateFile: () => "https://cdn.bootcdn.net/ajax/libs/sql.js/1.5.0/sql-wasm.wasm",
       };
       initSqlJs(config).then(function (SQL) {
           console.log("sql.js initialized");
