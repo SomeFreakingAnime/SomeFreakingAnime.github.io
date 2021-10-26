@@ -23,6 +23,39 @@
                 width: 43.75vw;
                 word-break: normal;
             }
+            #EP_STAT{
+                display: flex;
+                flex-wrap: nowrap;
+                width: 55vw;
+                border-width:1px;
+                
+                
+                font-size: 0.8vw;
+            }
+            #EPW{
+                font-size: 0.8vw;
+                font-weight: bold;
+                
+            }
+            #EPLIST{
+                width: 55vw;
+                height: 8vh;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-y:scroll;
+                border-right-style:solid;
+                border-width:1px;
+                border-bottom-style:solid;
+                border-left-style:solid;
+            }
+            .EP_BOTTON{
+                margin-top: 0.5vh;
+                
+                margin-left: 1vw;
+                margin-bottom: 0.5vh;
+                width: 2.5vw;
+                height: 2vw;
+            }
         </style>
 
 
@@ -37,7 +70,7 @@
 
 
     </head>
-    <body>
+    <body style="overflow:scroll;overflow-x:hidden">
         
         <hr>
         <p style="font-size: 0.7vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
@@ -46,7 +79,64 @@
             <div style="width: 21.5vw;"></div>
             <div id="PLAYER" style="width: 55vw;"></div>
         </div>
-        
+
+        <div style="position: relative;left: 21.5vw;">
+            <div id="EP_STAT">
+                <div style="height: 5vh;border-left-style:solid;border-width:1px;border-bottom-style:solid;display: flex;">
+                    <div style="width: 1vw;"></div>
+                    <div>
+                        <div style="height: 1.4vh;"></div>
+                        <div id="EPW">EPISODE(0/0):</div>
+                    </div>
+                    <div style="width: 1vw;"></div>
+                    
+                </div>
+                
+                <div id="EPLIST">
+                    <div style="width: 55vw;height: 0.5vh;"></div>
+                    <div id="EP_BOTTONS" style="display: flex;flex-wrap: wrap;">
+                        <button class="EP_BOTTON"  type="button">0</button>
+                        <button class="EP_BOTTON"  type="button">1</button>
+                        <button class="EP_BOTTON"  type="button">2</button>
+                        <button class="EP_BOTTON"  type="button">3</button>
+                        <button class="EP_BOTTON"  type="button">4</button>
+                        <button class="EP_BOTTON"  type="button">5</button>
+                        <button class="EP_BOTTON"  type="button">6</button>
+                        <button class="EP_BOTTON"  type="button">7</button>
+                        <button class="EP_BOTTON"  type="button">8</button>
+                        <button class="EP_BOTTON"  type="button">9</button>
+                        <button class="EP_BOTTON"  type="button">10</button>
+                        <button class="EP_BOTTON"  type="button">11</button>
+                        <button class="EP_BOTTON"  type="button">12</button>
+                        <button class="EP_BOTTON"  type="button">0</button>
+                        <button class="EP_BOTTON"  type="button">1</button>
+                        <button class="EP_BOTTON"  type="button">2</button>
+                        <button class="EP_BOTTON"  type="button">3</button>
+                        <button class="EP_BOTTON"  type="button">4</button>
+                        <button class="EP_BOTTON"  type="button">5</button>
+                        <button class="EP_BOTTON"  type="button">6</button>
+                        <button class="EP_BOTTON"  type="button">7</button>
+                        <button class="EP_BOTTON"  type="button">8</button>
+                        <button class="EP_BOTTON"  type="button">9</button>
+                        <button class="EP_BOTTON"  type="button">10</button>
+                        <button class="EP_BOTTON"  type="button">11</button>
+                        <button class="EP_BOTTON"  type="button">12</button>
+                        <button class="EP_BOTTON"  type="button">0</button>
+                        <button class="EP_BOTTON"  type="button">1</button>
+                        <button class="EP_BOTTON"  type="button">2</button>
+                        <button class="EP_BOTTON"  type="button">3</button>
+                        <button class="EP_BOTTON"  type="button">4</button>
+                        <button class="EP_BOTTON"  type="button">5</button>
+                        <button class="EP_BOTTON"  type="button">6</button>
+                        
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
         <p style="font-size: 1vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
 
         <div id="BANGUMI_INFO" style="position: relative;left: 21.5vw;">
