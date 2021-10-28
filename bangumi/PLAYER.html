@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title id="TITLE"></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/Base64/1.1.0/base64.js"></script>
+        <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
+        <style>
+            p{font-family: sans-serif;}
+            div{font-family: sans-serif;}
+            #BANGUMI_INFO{
+                display: flex;
+            }
+            #PLAYER_DIV{
+                margin-left: 22.5%;            }
+            .B_STATUS{
+                font-size: 0.7vw;
+                background:rgb(255, 255, 255);color:rgb(117, 117, 117);
+            }
+            #INTRO{
+                font-size: 0.8vw;
+                width: 43.75vw;
+                word-break: normal;
+            }
+            #EP_STAT{
+                display: flex;
+                flex-wrap: nowrap;
+                width: 55vw;
+                border-width:1px;
+                
+                
+                font-size: 0.8vw;
+            }
+            #EPW{
+                font-size: 0.8vw;
+                font-weight: bold;
+                height: 2vh;
+                white-space:nowrap;
+                
+            }
+            #EPLIST{
+                width: 55vw;
+                height: 8vh;
+                display: flex;
+                flex-wrap: wrap;
+                overflow-y:scroll;
+                border-top-style: solid;
+                border-right-style:solid;
+                border-width:1px;
+                border-bottom-style:solid;
+                border-left-style:solid;
+            }
+            .EP_BUTTON{
+                margin-top: 0.5vh;
+                
+                margin-left: 1vw;
+                margin-bottom: 0.5vh;
+                width: 2.5vw;
+                height: 2vw;
+                background-color: #ffffff00;
+                border: 1px solid rgb(0, 0, 0);
+                
+                font-family: sans-serif;
+                font-size: 0.7vw;
+                
+            }
+            .EP_BUTTON:hover {background: #000000;color: white;}
+            .DOWN_BUTTON{
+                border: 1px solid rgb(0, 0, 0);
+                
+                width: 8vh;
+                height: 2.4vh;
+                
+                font-size: 1vh;
+                background-color: white;
+            }
+            .DOWN_BUTTON:hover {background: #616161;color: white;}
+        </style>
+
+
+
+
+    </head>
+    <body style="overflow:scroll;overflow-x:hidden">
+        
+        
+        <p style="font-size: 0.7vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
+
+        
+        <div id="PLAYER_DIV" title="#RES#"><div id="PLAYER" style="width: 55vw;"></div></div>
+        
+
+        <div style="height: 1vh; width: 1vw;"></div>
+        <div id="EPB" style="margin-left: 22.5%;" >
+            <div id="EP_STAT">
+                <div style="height: 5vh;border-left-style:solid;border-width:1px;border-bottom-style:solid;display: flex;border-top-style: solid;">
+                    <div style="width: 1vw;"></div>
+                    <div>
+                        <div style="height: 1.4vh;"></div>
+                        <div nowrap id="EPW">EPISODE:</div>
+                    </div>
+                    <div style="width: 1vw;"></div>
+                    
+                </div>
+                
+                <div id="EPLIST">
+                    <div style="width: 55vw;height: 0.5vh;"></div>
+                    <div id="EP_BUTTONS" style="display: flex;flex-wrap: wrap;">
+                        
+                    </div>
+                    
+                    
+
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.5vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
+
+        <div id="BANGUMI_INFO" style="margin-left: 22.5%;">
+            <img id="MAIN_PIC" src="" alt="#暂无图片#" width="12%" height="12%">
+            <div style="width: 1.5vw;"></div>
+            <div>
+                
+                <div id="B_TITLE" style="font-size: 1.5vw;font-weight: bold;">TITLE</div>
+                <div style="height: 0.5vw;"></div>
+                <div style="display: flex;">
+                    <div class="B_STATUS" id="BANGUMI_TYPE">TYPE</div>
+                    <div style="width: 0.5vw;"></div>
+                    <div class="B_STATUS" id="BANGUMI_REGION">REGION</div>
+                    <div style="width: 0.5vw;"></div>
+                    <div class="B_STATUS" id="BANGUMI_DATE">YEAR</div>
+                    <div style="width: 0.5vw;"></div>
+                    <div class="B_STATUS" id="BANGUMI_EP_STATUS">STATUS</div>
+                </div>
+                <div style="height: 0.5vw;"></div>
+                <div id="INTRO">
+                </div>
+            </div>
+        </div>
+
+        <p style="font-size: 0.7vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
+
+        <hr>
+
+        <div style="text-align:center">
+            <button class="DOWN_BUTTON" id="VIDDOWN" type="button">视频下载</button>
+            <button class="DOWN_BUTTON" onclick="location.href='https://some.freakinganime.online'" type="button">回到主页</button>
+        </div>
+
+        
+
+        <script src="PLAYER.js"></script>
+
+
+
+    </body>
