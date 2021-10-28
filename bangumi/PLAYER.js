@@ -66,6 +66,7 @@ axios.get(JSONURL).then(function(response){
             B_STATUS.innerText="连载中";
             break;
     }
+    
     var VAR_INFO_COUNT=response.data.INFO_COUNT;
     var B_INTRO=document.getElementById("INTRO");
     for(INTRO_NUM=1;INTRO_NUM<=VAR_INFO_COUNT;INTRO_NUM++){
@@ -88,6 +89,8 @@ axios.get(JSONURL).then(function(response){
             BUTTONLOOP.title="RESOLUTION:"+response.data.EP[EPLOOP].RES+"P";
             BUTTONLOOP.setAttribute("onclick",FUNTEXT);
             EPBUTTON_LIST.appendChild(BUTTONLOOP);
+            if(response.data.EP[EPLOOP].HTTPS==false)
+            NON_HTTPS_ALERT();
         }
         VID_SWITCH(response.data.EP[EPCOUNT].VID,response.data.EP[EPCOUNT].DOWN,response.data.EP[EPCOUNT].NUM,response.data.BANGUMI_NAME,response.data.EP[EPCOUNT].RES,response.data.EP[EPCOUNT].HTTPS,response.data.EP_COUNT);
     }
