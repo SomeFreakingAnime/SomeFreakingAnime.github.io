@@ -38,7 +38,7 @@ function NON_HTTPS_ALERT(){
         window.alert("当前资源使用无加密协议传输，请以http方式访问本页面，否则无法正常加载视频！");
     }
 }
-JSONURL = "/"+JSONURL+".json";
+JSONURL = "/bangumi/"+JSONURL+".json";
 axios.get(JSONURL).then(function(response){
     console.log("UPLOAD BY : "+response.data.PROVIDER)
     var MAIN_PIC = document.getElementById("MAIN_PIC");
