@@ -12,6 +12,11 @@
     <body>
         <div id="content"></div>
         <script>
+            const service = axios.create({
+                headers: {
+                    'Cache-Control': 'no-cache'
+                }
+            });
             JSONURL="http://bangumi.test.upcdn.net/result.json"
             axios.get(JSONURL).then(function(response){
                 var inum=response.data.totalnum;
