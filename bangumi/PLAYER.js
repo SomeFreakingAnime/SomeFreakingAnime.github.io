@@ -1,9 +1,10 @@
-var EPCOUNT='1';
+
 var url = document.location.toString();
 var urlParmStr = url.slice(url.indexOf('?')+1);
 var arr = urlParmStr.split('&');
 var JSONURL = arr[0].split("=")[1];
-EPCOUNT =arr[1].split("=")[1];
+var EPCOUNT =arr[1].split("=")[1];
+if(EPCOUNT=="")EPCOUNT=1;
 const main_player = new DPlayer({
     container: document.getElementById('PLAYER'),
     video: {
@@ -82,6 +83,7 @@ axios.get(JSONURL).then(function(response){
         VID_SWITCH(response.data.EP[1].VID,response.data.EP[1].DOWN,response.data.EP[1].NUM,response.data.BANGUMI_NAME,response.data.EP[1].RES,response.data.EP[1].HTTPS,response.data.EP_COUNT);
     }
     else{
+        var IF_POP=false
         for(EPLOOP = 1;EPLOOP<=response.data.EP_COUNT;EPLOOP++){
             var BUTTONLOOP=document.createElement("button");
             BUTTONLOOP.innerText=EPLOOP;
@@ -91,7 +93,14 @@ axios.get(JSONURL).then(function(response){
             BUTTONLOOP.setAttribute("onclick",FUNTEXT);
             EPBUTTON_LIST.appendChild(BUTTONLOOP);
             if(response.data.EP[EPLOOP].HTTPS==false)
-            NON_HTTPS_ALERT();
+            {
+                if(IF_POP==false){
+                    NON_HTTPS_ALERT();
+                    IF_POP=true;
+                }
+                
+            }
+            
         }
         VID_SWITCH(response.data.EP[EPCOUNT].VID,response.data.EP[EPCOUNT].DOWN,response.data.EP[EPCOUNT].NUM,response.data.BANGUMI_NAME,response.data.EP[EPCOUNT].RES,response.data.EP[EPCOUNT].HTTPS,response.data.EP_COUNT);
     }
