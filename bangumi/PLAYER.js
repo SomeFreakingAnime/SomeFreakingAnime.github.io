@@ -1,4 +1,4 @@
-var EPCOUNT=1
+var EPCOUNT='1';
 var url = document.location.toString();
 var urlParmStr = url.slice(url.indexOf('?')+1);
 var arr = urlParmStr.split('&');
