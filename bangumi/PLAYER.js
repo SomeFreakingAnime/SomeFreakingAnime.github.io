@@ -1,8 +1,9 @@
+var EPCOUNT=1
 var url = document.location.toString();
 var urlParmStr = url.slice(url.indexOf('?')+1);
 var arr = urlParmStr.split('&');
 var JSONURL = arr[0].split("=")[1];
-var EPCOUNT =arr[1].split("=")[1];
+EPCOUNT =arr[1].split("=")[1];
 const main_player = new DPlayer({
     container: document.getElementById('PLAYER'),
     video: {
