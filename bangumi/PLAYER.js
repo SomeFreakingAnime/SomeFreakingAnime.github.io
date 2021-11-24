@@ -1,10 +1,21 @@
 
+
 var url = document.location.toString();
+if(url.indexOf("?")==-1)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">网页未传入参数</p>";
+if(url.indexOf("&")==-1)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">网页传入参数格式错误</p>";
 var urlParmStr = url.slice(url.indexOf('?')+1);
 var arr = urlParmStr.split('&');
 var JSONURL = arr[0].split("=")[1];
 var EPCOUNT =arr[1].split("=")[1];
+if(typeof(JSONURL)=="undefined"){
+    document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-JSON ERROR-</h1><p style=\"text-align:center;\">json参数未指定或格式错误</p>";
+}
+if(JSONURL==""){
+    document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-JSON ERROR-</h1><p style=\"text-align:center;\">json参数未指定或格式错误</p>";
+}   
+if(typeof(EPCOUNT)=="undefined")EPCOUNT=1;
 if(EPCOUNT=="")EPCOUNT=1;
+if(isNaN(EPCOUNT)==true)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
 const main_player = new DPlayer({
     container: document.getElementById('PLAYER'),
     video: {
@@ -42,6 +53,8 @@ function NON_HTTPS_ALERT(){
 }
 JSONURL = "/bangumi/"+JSONURL+".json";
 axios.get(JSONURL).then(function(response){
+    if(Number(EPCOUNT)>response.data.EP_COUNT)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
+    if(Number(EPCOUNT)<=0)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
     console.log("UPLOAD BY : "+response.data.PROVIDER)
     var MAIN_PIC = document.getElementById("MAIN_PIC");
     MAIN_PIC.src = response.data.PIC;
@@ -104,5 +117,8 @@ axios.get(JSONURL).then(function(response){
         }
         VID_SWITCH(response.data.EP[EPCOUNT].VID,response.data.EP[EPCOUNT].DOWN,response.data.EP[EPCOUNT].NUM,response.data.BANGUMI_NAME,response.data.EP[EPCOUNT].RES,response.data.EP[EPCOUNT].HTTPS,response.data.EP_COUNT);
     }
-});
-
+    
+})
+.catch(function (error) {
+    document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-LOAD ERROR-</h1><p style=\"text-align:center;\">网路错误或资源不存在</p>";
+})
