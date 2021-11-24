@@ -79,6 +79,17 @@
                 background-color: white;
             }
             .DOWN_BUTTON:hover {background: #616161;color: white;}
+            #BG_SWITCH{
+                width: 6vw;
+                margin-left: 47vw;
+                margin-top: 2vh;
+                border: rgba(255, 255, 255, 0);
+                background-color: rgba(255, 255, 255, 0);
+                color: rgba(255, 255, 255, 0.5);
+            }
+            #BG_SWITCH:hover{
+                color:white;
+            }
         </style>
 
 
@@ -160,6 +171,7 @@
             
             <footer>
                 <div style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);">
+                    <button id="BG_SWITCH" onclick="BGP_OFF()">背景关闭/开启</button>
                     <div style="text-align:center">
                         <button class="DOWN_BUTTON" id="VIDDOWN" type="button">视频下载</button>
                         <button class="DOWN_BUTTON" onclick="location.href='https://some.freakinganime.online'" type="button">回到主页</button>
@@ -169,4 +181,14 @@
         </div>
         
         <script src="PLAYER.js"></script>
+        <script>
+            function BGP_OFF(){
+                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
+                document.getElementById("BG_SWITCH").onclick=function(){BGP_ON();}
+            }
+            function BGP_ON(){
+                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(https://www.dmoe.cc/random.php); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
+                document.getElementById("BG_SWITCH").onclick=function(){BGP_OFF();}
+            }
+        </script>
     </body>
