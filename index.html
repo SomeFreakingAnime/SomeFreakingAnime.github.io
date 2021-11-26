@@ -7,7 +7,12 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
         
     </head>
-
+    <script>
+        var sUserAgent = navigator.userAgent;
+        if (sUserAgent.indexOf('Android') > -1 || sUserAgent.indexOf('iPhone') > -1 || sUserAgent.indexOf('iPad') > -1 || sUserAgent.indexOf('iPod') > -1 || sUserAgent.indexOf('Symbian') > -1) {
+            location.href = '/GET_YOURSELF_A_PC.html';
+        }
+    </script>
     <body style="overflow:hidden;" marginheight="0px" marginwidth="0px">
         <div style="background-color: hsla(0, 0%, 100%, 0.8);" id="Hontai">
             <div style="width: 100vw;height: 80vh;">
@@ -20,7 +25,7 @@
                 </p>
             </div>
             
-            <footer style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);">
+            <footer style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.7);">
                 <div style="margin: 0;height: 2vh;"></div>
                 
                 <img src="https://www.bfcounter.vip/generatepic?userid=551ae874-fd76-474d-b051-0cd223832984" alt="Page Counter" border="0" style="margin-left: 45vw;width: 10vw;">
