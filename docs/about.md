@@ -15,7 +15,7 @@ SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
 
 [蝴蝶计数器](https://www.bfcounter.vip/) 提供网页计数服务
 
-[樱花api](https://www.dmoe.cc) [Yurikoto](https://yurikoto.com/) 提供网页背景图片
+[樱花api](https://www.dmoe.cc) [UomgAPI](http://api.uomg.com/) 提供网页背景图片
 ### 友情链接:
 [YYUT放送协会](https://space.bilibili.com/1379333376/)
 ##### 想要在本站分享你的资源/参与网站的建设吗? [加入我们](/JOIN_US.html)
