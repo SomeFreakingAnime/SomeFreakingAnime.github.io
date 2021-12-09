@@ -16,6 +16,7 @@
     "REGION":"日本",
     "PIC":"test.jpg",
     "PROVIDER":"somefreakinganime@yeah.net",
+    "PROVIDER_NAME":"Xuu",
     "EP_COUNT":1,
     "EP":[
         {"NUM":0,"VID":"EP0_NULL","DOWN":"EP0_NULL","RES":0,"HTTPS":false},

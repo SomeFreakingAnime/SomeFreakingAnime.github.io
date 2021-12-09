@@ -17,6 +17,7 @@
     "REGION":"日本",
     "PIC":"https://img.3dmgame.com/uploads/images/news/20210405/1617584963_615868.jpg",
     "PROVIDER":"somefreakinganime@yeah.net",
+    "PROVIDER_NAME":"Xuu",
     "EP_COUNT":12,
     "EP":[
         {"NUM":0,"VID":"EP0_NULL","DOWN":"EP0_NULL","RES":0,"HTTPS":false},
