@@ -1,4 +1,4 @@
-
+console.log(document.body.clientWidth,document.body.clientHeight)
 
 var url = document.location.toString();
 if(url.indexOf("?")==-1)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">网页未传入参数</p>";
@@ -31,10 +31,12 @@ function VID_SWITCH(VURL,DURL,VCOUNT,VTITLE,VRES,VHTTPS,EPTOTAL){
             url: VURL,
         },
     );
-    var DBUTTON=document.getElementById("VIDDOWN");
-    DBUTTON.setAttribute("onclick","location.href=\""+DURL+"\"");
-    var P_DIV=document.getElementById("PLAYER_DIV");
-    P_DIV.title="RESOLUTION:"+VRES+"P";
+    //var DBUTTON=document.getElementById("VIDDOWN");
+    //DBUTTON.setAttribute("onclick","location.href=\""+DURL+"\"");
+    document.getElementById("VIDDOWN_BOX").href=DURL;
+    //var P_DIV=document.getElementById("PLAYER_DIV");
+    //P_DIV.title="RESOLUTION:"+VRES+"P";
+    document.getElementById("VIDRES_BOX").innerText="当前视频分辨率："+VRES+"P";
     if(EPTOTAL==1){
         document.title=VTITLE+" - SFA";
     }
@@ -55,7 +57,9 @@ JSONURL = "/bangumi/"+JSONURL+".json";
 axios.get(JSONURL).then(function(response){
     if(Number(EPCOUNT)>response.data.EP_COUNT)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
     if(Number(EPCOUNT)<=0)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
-    console.log("UPLOAD BY : "+response.data.PROVIDER)
+    console.log("UPLOAD BY : "+response.data.PROVIDER);
+    document.getElementById("PROVIDER").href="mailto:"+response.data.PROVIDER;
+    document.getElementById("PROVIDER").innerText=response.data.PROVIDER_NAME;
     var MAIN_PIC = document.getElementById("MAIN_PIC");
     MAIN_PIC.src = response.data.PIC;
     var B_TITLE = document.getElementById("B_TITLE").innerText=response.data.BANGUMI_NAME;

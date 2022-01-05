@@ -37,13 +37,17 @@
             #EPW{
                 font-size: 0.8vw;
                 font-weight: bold;
-                height: 2vh;
+                height: 1vw;
                 white-space:nowrap;
+                margin-top: 1vw;
+                margin-bottom: 1vw;
+                margin-left: 0.8vw;
+                margin-right: 0.8vw;
                 
             }
             #EPLIST{
                 width: 55vw;
-                height: 8vh;
+                height: 4vw;
                 display: flex;
                 flex-wrap: wrap;
                 overflow-y:scroll;
@@ -54,10 +58,10 @@
                 border-left-style:solid;
             }
             .EP_BUTTON{
-                margin-top: 0.5vh;
+                margin-top: 0.25vw;
                 
                 margin-left: 1.25vw;
-                margin-bottom: 0.5vh;
+                margin-bottom: 0.25vw;
                 width: 2.5vw;
                 height: 2vw;
                 background-color: #ffffff00;
@@ -68,21 +72,11 @@
                 
             }
             .EP_BUTTON:hover {background: hsla(0, 0%, 0%, 0.9);color: white;}
-            .DOWN_BUTTON{
-                visibility: hidden;
-                border: 1px solid rgb(0, 0, 0);
-                
-                width: 8vh;
-                height: 2.4vh;
-                
-                font-size: 1vh;
-                background-color: white;
-            }
-            .DOWN_BUTTON:hover {background: #616161;color: white;}
+           
             #BG_SWITCH{
                 width: 6vw;
                 margin-left: 47vw;
-                margin-top: 2vh;
+                margin-top: 1vw;
                 border: rgba(255, 255, 255, 0);
                 background-color: rgba(255, 255, 255, 0);
                 color: rgba(255, 255, 255, 0.5);
@@ -108,19 +102,22 @@
             <p style="font-size: 2vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;margin: 0;"> 　 　     　  </p>
 
         
-            <div id="PLAYER_DIV" title="#RES#"><div id="PLAYER" style="width: 55vw;"></div></div>
+            <div id="PLAYER_DIV"><div id="PLAYER" style="width: 55vw;"></div></div>
         
 
-            <div style="height: 1vh; width: 1vw;"></div>
-            <div id="EPB" style="margin-left: 22.5%;" >
+            
+            <div id="EPB" style="margin-left: 22.5%;margin-top: 0.5vw;" >
                 <div id="EP_STAT">
-                    <div style="height: 5vh;border-left-style:solid;border-width:1px;border-bottom-style:solid;display: flex;border-top-style: solid;background-color: rgba(255, 255, 255, 0.5);;">
-                        <div style="width: 1vw;"></div>
-                        <div>
-                            <div style="height: 1.4vh;"></div>
+                    <div style="border-width:1px;display: flex;border-top-style: solid;">
+                        <div style="height: 3vw;border-left-style:solid;border-width:1px;"></div>
+                        <div style="background-color: rgba(255, 255, 255, 0.5); height: 3vw;">
+                            
+                            
                             <div nowrap id="EPW">EPISODE:</div>
+                            
+                            <div style="border-top-style: solid;width: 100%;height: 1vh;border-width:1px;"></div>
                         </div>
-                        <div style="width: 1vw;"></div>
+                        
                     
                     </div>
                 
@@ -136,12 +133,12 @@
                 </div>
             </div>
 
-            <p style="font-size: 0.5vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
+            
 
-            <div id="BANGUMI_INFO" style="margin-left: 22.5%;">
+            <div id="BANGUMI_INFO" style="margin-left: 22.5%;margin-top: 2.5vw;margin-bottom: 8vw;margin-right: 22.5%;">
                 <img id="MAIN_PIC" src="" alt="#暂无图片#" width="12%" height="12%">
                 <div style="width: 1.5vw;"></div>
-                <div>
+                <div style="width: 100%;">
 
                     <div id="B_TITLE" style="font-size: 1.5vw;font-weight: bold;">TITLE</div>
                     <div style="height: 0.5vw;"></div>
@@ -155,13 +152,21 @@
                         <div class="B_STATUS" id="BANGUMI_EP_STATUS">STATUS</div>
                     </div>
                     <div style="height: 0.5vw;"></div>
-                    <div id="INTRO">
+                    <div id="INTRO" style="margin-bottom: 1.5vw;">
+                        
+                    </div>
+                    <hr>
+                    <p style="margin: 0;font-size: 0.7vw;">资源信息：<button id="VIDINFOBOX_BUTTON" style="margin:0;font-size: 0.7vw; text-align: left;color: blue;background: none;margin: 0;padding: 0;border: none;cursor: pointer;outline:none;" onclick="VBOX_ON()">展开</button></p>
+                    <div id="VIDINFOBOX" style="width:100%;margin: 0;display: none;">
+                        <p id="VIDRES_BOX" style="margin: 0;font-size: 0.7vw;margin-left: 0.7vw;">当前视频分辨率：</p>
+                        <p style="margin: 0;font-size: 0.7vw;margin-left: 0.7vw">资源提供者：<a id="PROVIDER" style="margin: 0;font-size: 0.7vw;"></a></p>
+                        <p style="margin: 0;font-size: 0.7vw;margin-left: 0.7vw;">资源链接：<a id="VIDDOWN_BOX" style="margin: 0;font-size: 0.7vw;" href="">点此下载</a></p>
                     </div>
                 </div>
             </div>
 
-            <p style="font-size: 2vw;-webkit-user-select: none;-moz-user-select: none;-o-user-select: none;user-select: none;text-align:center;"> 　 　     　  </p>
-
+            
+            
         
 
         
@@ -172,10 +177,7 @@
             <footer>
                 <div id="footer" style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);">
                     <button id="BG_SWITCH" onclick="BGP_OFF()">背景关闭/开启</button>
-                    <div style="text-align:center">
-                        <button class="DOWN_BUTTON" id="VIDDOWN" type="button">视频下载</button>
-                        <button class="DOWN_BUTTON" onclick="location.href='https://some.freakinganime.online'" type="button">回到主页</button>
-                    </div>
+                    
                 </div>
             </footer>
         </div>
@@ -191,6 +193,16 @@
                 document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(https://www.dmoe.cc/random.php); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
                 document.getElementById("BG_SWITCH").onclick=function(){BGP_OFF();};
                 document.getElementById("footer").style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);";
+            }
+            function VBOX_ON(){
+                document.getElementById("VIDINFOBOX_BUTTON").onclick=function(){VBOX_OFF();};
+                document.getElementById("VIDINFOBOX_BUTTON").innerText="收起"
+                document.getElementById("VIDINFOBOX").style="width:100%;margin: 0;";
+            }
+            function VBOX_OFF(){
+                document.getElementById("VIDINFOBOX_BUTTON").onclick=function(){VBOX_ON();};
+                document.getElementById("VIDINFOBOX_BUTTON").innerText="展开"
+                document.getElementById("VIDINFOBOX").style="width:100%;margin: 0;display: none;";
             }
         </script>
     </body>
