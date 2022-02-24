@@ -1,0 +1,52 @@
+<head>
+    <link rel="icon" href="../retro_design/favicon.png">
+    <title>SFA-RetroDesign</title>
+    <meta http-equiv="Pragma" contect="no-cache">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="description" content="施工中。。。">
+    <style>
+        #mainframe{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+    </style>
+</head>
+<body style="margin: 0;">
+    <div id="mainframe">
+        <div id="headbar" style="width: 100%;height: 10%;margin: 0;">
+            <iframe src="../retro_design/StandardHead.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+        </div>
+        <hr style="margin-bottom: 1.5%;">
+        <div style="margin: 0;width: 100%;height: 90%;display: flex;">
+            <div id="leftbar" style="margin: 0;height: 100%;width: 20%;">
+                <iframe src="../retro_design/StandardLeftbar.html" frameborder="0" style="width: 100%;height: 100%;"></iframe>
+            </div>
+            <div id="content" style="width: 80%;height: 100%;margin: 0;border: dashed 1px;margin-left: 1%;">
+                <iframe src="../retro_design/StandardMain.html" frameborder="0" style="width: 100%;height: 100%;"></iframe></div>
+        </div>
+    </div>
+</body>
+<script>
+    var box=document.getElementById("mainframe");
+    //box.style.border="solid"
+    console.log(document.body.offsetHeight);
+    console.log(document.body.offsetWidth);
+    if(document.body.offsetHeight<600){
+        box.style.width=800;
+        box.style.height=600;
+    }
+    else{
+        box.style.height=document.body.offsetHeight;
+        box.style.width=document.body.offsetHeight/3*4;
+    }
+    if(document.body.offsetHeight/3>=document.body.offsetWidth/4){
+        box.style.margin="3%";
+    }
+</script>
