@@ -4,23 +4,28 @@
         <title id="TITLE"></title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <script src="https://cdn.bootcdn.net/ajax/libs/Base64/1.1.0/base64.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.21.1/axios.min.js"></script>
-        <script src="https://cdn.bootcdn.net/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+        <script src="https://data.bvid.fun/lib/base64.js"></script>
+        <script src="https://data.bvid.fun/lib/axios.min.js"></script>
+        <script src="https://data.bvid.fun/lib/showdown.min.js"></script>
         <style>
             
             body{width: 100vw;height: 100vh}
             div,p{font-family: sans-serif;}
-            #BG_SWITCH{
-                width: 6vw;
-                margin-left: 47vw;
-                margin-top: 2vh;
+            
+            .FOOT_BUTTON{
                 border: rgba(255, 255, 255, 0);
                 background-color: rgba(255, 255, 255, 0);
                 color: rgba(255, 255, 255, 0.5);
+                font-size: 0.7vw;
+                margin: 0;
             }
-            #BG_SWITCH:hover{
+            .FOOT_BUTTON:hover{
                 color:white;
+            }
+            .FOOT_TEXT{
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 0.7vw;
+                margin: 0;
             }
         </style>
 
@@ -49,28 +54,64 @@
         
 
             
-            <div id="footer" style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);width: 100%;">
-                
-                <button id="BG_SWITCH" onclick="BGP_OFF()">背景关闭/开启</button>
-                    
-                
-            </div>
+            <footer>
+                <div id="footer" style="height: 10vw;background-color: hsla(0, 0%, 0%, 0.5);text-align: center;">
+                    <button style="margin-top: 1vw;" class="FOOT_BUTTON" id="BG_SWITCH" onclick="BGP_OFF()">背景关闭/开启</button>
+                    <p class="FOOT_TEXT" style="margin-top: 0.5vw;">Copyright©2022 SomeFreakingAnime by Xuu</p>
+                    <p class="FOOT_TEXT">资源仅供交流学习  <button class="FOOT_BUTTON" onclick="window.open('/LICENSE.html')">>>声明 协议 免责条款<<</button></p>
+                    <p class="FOOT_TEXT">本站由<a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"><img src="/UPYUN.png" style="height: 0.9vw;vertical-align:text-top;"></a>提供部分云存储服务  页面访问建议:屏幕等效分辨率720p以上</p>
+                    <p style="margin-top: 1vw;"><button class="FOOT_BUTTON" onclick="window.open('/')">返回首页</button><button class="FOOT_BUTTON" onclick="addFavorite(this,{title:'SomeFreakingAnime',url:'https://some.freakinganime.online'})">收藏本站</button><button class="FOOT_BUTTON" onclick="window.open('/about.html')">关于我们</button><button class="FOOT_BUTTON" onclick="window.open('/guide.html')">全站使用指南</button></p>
+                </div>
+            </footer>
         </div>
         <script>
-            function BGP_OFF(){
-                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
-                document.getElementById("BG_SWITCH").onclick=function(){BGP_ON();};
-                document.getElementById("footer").style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.8);width: 100%;";
-            }
-            function BGP_ON(){
-                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(https://www.dmoe.cc/random.php); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
-                document.getElementById("BG_SWITCH").onclick=function(){BGP_OFF();};
-                document.getElementById("footer").style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);width: 100%;";
-            }
             axios.get("/docs/about.md").then(function(response){
                 var converter = new showdown.Converter();
                 var htmlcon=converter.makeHtml(response.data);
                 document.getElementById("texts").innerHTML=htmlcon;
             });
+        </script>
+        <script>
+            function BGP_OFF(){
+                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
+                document.getElementById("BG_SWITCH").onclick=function(){BGP_ON();};
+                document.getElementById("footer").style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.8);text-align: center;";
+            }
+            function BGP_ON(){
+                document.body.style="overflow:scroll;overflow-x:hidden;background-image:url(https://www.dmoe.cc/random.php); background-repeat:no-repeat; background-attachment:fixed;margin: 0;background-size: 100vw;"
+                document.getElementById("BG_SWITCH").onclick=function(){BGP_OFF();};
+                document.getElementById("footer").style="height: 20vh;background-color: hsla(0, 0%, 0%, 0.5);text-align: center;";
+            }
+            function VBOX_ON(){
+                document.getElementById("VIDINFOBOX_BUTTON").onclick=function(){VBOX_OFF();};
+                document.getElementById("VIDINFOBOX_BUTTON").innerText="收起"
+                document.getElementById("VIDINFOBOX").style="width:100%;margin: 0;";
+            }
+            function VBOX_OFF(){
+                document.getElementById("VIDINFOBOX_BUTTON").onclick=function(){VBOX_ON();};
+                document.getElementById("VIDINFOBOX_BUTTON").innerText="展开"
+                document.getElementById("VIDINFOBOX").style="width:100%;margin: 0;display: none;";
+            }
+            function addFavorite(obj, opts){
+                var _t, _u;
+                if(typeof opts != 'object'){
+                    _t = document.title;
+                    _u = location.href;
+                }else{
+                    _t = opts.title || document.title;
+                    _u = opts.url || location.href;
+                }
+                try{
+                    window.external.addFavorite(_u, _t);
+                }catch(e){
+                    if(window.sidebar){
+                        obj.href = _u;
+                        obj.title = _t;
+                        obj.rel = 'sidebar';
+                    }else{
+                        alert('抱歉，您所使用的浏览器无法完成此操作。\n请使用 Ctrl + D 将本页加入收藏夹！');
+                    }
+                }
+}
         </script>
     </body>

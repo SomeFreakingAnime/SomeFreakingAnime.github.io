@@ -1,0 +1,1 @@
+python SingleBangumi-JSON-ConfigTool_Terminal.py

@@ -1,5 +1,10 @@
+
+# <center>-----站点还在开发中 抱歉捏-----</center>
+
+###### <a href="../retro_design/LOG.html" target="_self">日志<a>
+
 # 关于本站
-SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。（还在建设中）
+SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
 ### 网站基于以下开源项目构建:
 [DPlayer](http://dplayer.js.org/zh/)
 
@@ -11,11 +16,13 @@ SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
 
 [又拍云](https://www.upyun.com/) [小麦云服](https://own-cloud.cn/) 提供资源托管服务
 
-[BootCDN](https://www.bootcdn.cn/) [jsDelivr](https://www.jsdelivr.com/) 提供开源库CDN服务
-
 [蝴蝶计数器](https://www.bfcounter.vip/) 提供网页计数服务
 
-[樱花api](https://www.dmoe.cc) [UomgAPI](http://api.uomg.com/) 提供网页背景图片
+&nbsp;
+
+[BootCDN](https://www.bootcdn.cn/) [jsDelivr](https://www.jsdelivr.com/) 提供开源库CDN服务(已废弃)
+
+[樱花api](https://www.dmoe.cc) [UomgAPI](http://api.uomg.com/) 提供网页背景图片(已废弃)
 ### 友情链接:
 [YYUT放送协会](https://space.bilibili.com/1379333376/)
 ##### 想要在本站分享你的资源/参与网站的建设吗? [加入我们](/JOIN_US.html)
