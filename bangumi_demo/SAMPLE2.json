@@ -1,0 +1,25 @@
+{
+    "BANGUMI_NAME":"天气之子",
+    "TYPE":1,
+    "INFO_COUNT":6,
+    "INFO":[
+        {"LINE":"LINE0_NULL"},
+        {"LINE":"“想尝试前往，那道光芒之中”"},
+        {"LINE":"高中一年级的夏天，从离岛离家出走，来到东京的帆高。但是他的生活立马变得穷困，在度过孤独的每一天之后终于找到的工作，是为古怪的超自然杂志撰稿。"},
+        {"LINE":"如同预示着他接下来的命运一般，连日不断地下雨。此时，在人潮熙熙攘攘的都市一角，帆高遇到了一位少女。"},
+        {"LINE":"由于某些缘故，少女阳菜和弟弟两人一起坚强生活。而她，拥有不可思议的能力。"},
+        {"LINE":"“呐，现在开始就要放晴了哦”"},
+        {"LINE":"雨逐渐停止，街道笼罩在美丽的光芒中。那是仅仅在心中祈祷，就能让天空放晴的力量——        "}
+    ],
+    "DATE":"2019Q3",
+    "IF_COMPLETE":true,
+    "REGION":"日本",
+    "PIC":"test.jpg",
+    "PROVIDER":"somefreakinganime@yeah.net",
+    "PROVIDER_NAME":"Xuu",
+    "EP_COUNT":1,
+    "EP":[
+        {"NUM":0,"VID":"EP0_NULL","DOWN":"EP0_NULL","RES":0,"HTTPS":false},
+        {"NUM":1,"VID":"https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/18cb667f5285890807929994651/xBwYyNhF3CkA.mp4","DOWN":"https://1251316161.vod2.myqcloud.com/007a649dvodcq1251316161/18cb667f5285890807929994651/xBwYyNhF3CkA.mp4","RES":1080,"HTTPS":true}
+    ]
+}
