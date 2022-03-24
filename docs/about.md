@@ -26,3 +26,4 @@ SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
 ### 友情链接:
 [YYUT放送协会](https://space.bilibili.com/1379333376/)
 ##### 想要在本站分享你的资源/参与网站的建设吗? [加入我们](/JOIN_US.html)
+<img src="https://www.bfcounter.vip/generatepic?userid=551ae874-fd76-474d-b051-0cd223832984" alt="Page Counter">
