@@ -23,7 +23,6 @@
         <div id="headbar" style="width: 100%;height: 10%;margin: 0;display: flex;overflow: hidden;">
             <img src="../retro_design/LOGO.gif" style="width: 40%;margin: 0;margin-top: 2%;margin-left: -1.2%;">
             <p style="font-family: Arial, Helvetica, sans-serif;margin-top: 5.5%;font-weight: bold;margin-left: -1.2%;">(beta)</p>
-            <script>console.log("访问 ftp.freakinganime.online:1919 打开新世界的大门(｡･∀･)ﾉﾞ")</script>
         </div>
         <hr style="margin-bottom: 1.5%;">
         <div style="margin: 0;width: 100%;height: 85%;display: flex;">
@@ -35,23 +34,21 @@
                 </div>
                 <div style="width: 99%;margin: 0;border: 1px solid ;background-color: #bed5ff;text-align: center;">网站导航</div>
                 <div style="width: 99%;margin: 0;height: 40%;border: 1px solid ;border-top: 0;">
-    
                 </div>
                 <div style="width: 99%;margin: 0;border: 1px solid ;background-color: #bed5ff;text-align: center;">关于我们</div>
                 <div style="width: 99%;margin: 0;height: 10%;border: 1px solid ;border-top: 0;"></div>
-                <script>
-                    function search(){
-                        text = document.getElementById("leftbar_search").value;
-                        console.error("搜索功能开发中... 您当前输入的内容为: "+text);
-                    }
-                </script>
             </div>
             <div id="content" style="width: 80%;height: 100%;margin: 0;border: dashed 1px;margin-left: 0.5%;">
-                <iframe src="../retro_design/StandardMainContent.html" frameborder="0" style="width: 100%;height: 100%;"></iframe></div>
+                <iframe src="../retro_design/StandardArticleLoader.html?targetId=about&targetName=6buY6K6k6aG16Z2i" frameborder="0" style="width: 100%;height: 100%;"></iframe></div>
         </div>
     </div>
 </body>
 <script>
+    console.log("访问 ftp.freakinganime.online:1919 打开新世界的大门(｡･∀･)ﾉﾞ")
+    function search(){
+        text = document.getElementById("leftbar_search").value;
+        window.alert("搜索功能开发中...\n您当前输入的内容为: "+text);
+    }
     var box=document.getElementById("mainframe");
     //box.style.border="solid"
     //console.log(document.body.offsetHeight);

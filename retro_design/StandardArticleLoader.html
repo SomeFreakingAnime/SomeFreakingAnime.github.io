@@ -1,0 +1,32 @@
+<head>
+    <script src="../lib/base64.min.js"></script>
+    <script src="../lib/axios.min.js"></script>
+    <script src="../lib/showdown.min.js"></script>
+    <base target="_blank" />
+</head>
+<body style="margin: 0;">
+    <div id="title" style="width: 100%;margin: 0;border-bottom: 1px dotted ;font-size: smaller;color: black;font-weight: 100;position:fixed;background-color: white;"></div>
+    <div style="height: 3%;"></div>
+    <div id="texts" style="margin-left: 3%;">
+    </div>
+    <script>
+        function getUrlParam (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r!= null) {
+            	return unescape(r[2]);
+            }else{
+            	return null;
+            }
+        }
+        var targetId = getUrlParam('targetId');
+        var targetName = getUrlParam('targetName');
+        var title=Base64.decode(targetName)
+        document.getElementById('title').innerText="　"+title;
+        axios.get("../docs/"+targetId+".md").then(function(response){
+            var converter = new showdown.Converter();
+            var htmlcon=converter.makeHtml(response.data);
+            document.getElementById("texts").innerHTML=htmlcon;
+        });
+    </script>
+</body>

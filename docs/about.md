@@ -1,7 +1,7 @@
 
 # <center>-----站点还在开发中 抱歉捏-----</center>
 
-###### <a href="../retro_design/LOG.html" target="_self">日志<a>
+###### <a href="../retro_design/StandardArticleLoader.html?targetId=log&targetName=5pel5b+X" target="_self">日志<a>
 
 # 关于本站
 SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
