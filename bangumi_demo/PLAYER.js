@@ -53,7 +53,7 @@ function NON_HTTPS_ALERT(){
         window.alert("当前资源使用无加密协议传输，请以http方式访问本页面，否则无法正常加载视频！");
     }
 }
-JSONURL = "/bangumi/"+JSONURL+".json";
+JSONURL = "/bangumi_demo/"+JSONURL+".json";
 axios.get(JSONURL).then(function(response){
     if(Number(EPCOUNT)>response.data.EP_COUNT)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
     if(Number(EPCOUNT)<=0)document.getElementById("Hontai").innerHTML="<h1 style=\"text-align:center;\">-WEB ERROR-</h1><p style=\"text-align:center;\">选集参数错误</p>";
