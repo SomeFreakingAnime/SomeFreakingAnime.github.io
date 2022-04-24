@@ -1,7 +1,7 @@
 # <center>-----日志-----</center>
 ## 2022.4.24
 
-重写Player页面中。。。 进度：<a href="http://192.168.1.2/retro_design/StandardPlayer.html?JSON=SAMPLE1" target="_self">Demo<a>
+重写Player页面中。。。 进度：<a href="/retro_design/StandardPlayer.html?JSON=SAMPLE1" target="_self">Demo<a>
 
 ## 2022.4.19
 
