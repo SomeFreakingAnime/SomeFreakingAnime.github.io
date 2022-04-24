@@ -1,0 +1,80 @@
+<head>
+    <script src="https://data.bvid.fun/lib/DPlayer.min.js"></script>
+    <script src="https://data.bvid.fun/lib/base64.js"></script>
+    <script src="https://data.bvid.fun/lib/axios.min.js"></script>
+</head>
+<body style="margin: 0;background-color: rgba(255, 255, 255, 0.300);">
+    <div id="title" style="width: 100%;margin: 0;font-size: small;line-height: 2.5vh;color: black;position:fixed;background-color: #bed5ff;height: 2.5%;">　Player</div>
+    <div style="height: 2.5%;"></div>
+    <div id="main" style="height: 97.5%;position: fixed;width: 100%;overflow-y: scroll;border-top: solid 1px;">
+        <center><div id="dplayer" style="border: solid 1px;margin: 0;height: 63%;width: 109vh;margin-top: 5%;"></div></center>
+        <center>
+            <div id="infobar" style="width: 109vh;margin: 0;margin-top: 5%;display: flex;margin-bottom: 5%;">
+                <div style="width: 20%;"><img id="picdata" src="" alt="#暂无图片#" width="100%"></div>
+                <div style="margin:0;margin-left:2%;width: 50%;border-right: solid 1px rgb(220, 220, 220);height: fit-content;">
+                    <h1 id="b_title" style="text-align: left;margin-top: 0;margin-right: 2%;"></h1>
+                    <p id="b_status" style="text-align: left;font-size: xx-small;color: rgb(140, 140, 140);margin-right: 2%;"></p>
+                    <p id="b_info" style="text-align: left;font-size: smaller;margin-right: 2%;"></p>
+                </div>
+                <div style="margin: 0;width: 28%;visibility: hidden;">
+                    <p style="font-size: xx-small;margin-top: 0;">本资源由 <a id="provider" href=""></a> 提供</p>
+                    <p style="font-size: small;margin-left: 25%;text-align: left;margin-bottom: 1%;">选集：</p>
+                    <div id="EPs" style="margin-left: 25%;height: 65%;overflow-y: scroll;"></div>
+                </div>
+            </div>
+        </center>
+    </div>
+    
+    <script>
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            video: {
+                url: 'https://data.bvid.fun/Sample.mp4',
+            },
+        });
+        function getUrlParam (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r!= null) {
+            	return unescape(r[2]);
+            }else{
+            	return null;
+            }
+        };
+        var JSON=getUrlParam("JSON");
+        var EP=getUrlParam("EP");
+        JSON = "/BANGUMI/"+JSON+".json";
+        axios.get(JSON).then(function(response){
+            var DATA=eval("("+response.data+")");
+            document.getElementById("picdata").src=DATA.PIC;
+            document.getElementById("b_info").innerText=DATA.INFO;
+            document.getElementById("b_title").innerText=DATA.BANGUMI_NAME;
+            var b_status="";
+            switch (DATA.TYPE) {
+                case 0:
+                    b_status+="TV动画    "
+                    break;
+            
+                default:
+                    break;
+            };
+            b_status+=(DATA.REGION+"    "+DATA.DATE+"    ");
+            if(DATA.IF_COMPLETE==true){
+                b_status+=("已完结  共"+String(DATA.EP_COUNT)+"话  ");
+            }else{b_status+="连载中  ";};
+            document.getElementById("b_status").innerText=b_status;
+            document.getElementById("provider").href="mailto:"+DATA.PROVIDER;
+            document.getElementById("provider").innerText=DATA.PROVIDER_NAME;
+            for(loop=1;loop<=DATA.EP_COUNT;loop++){
+                var PLAY;
+                var ep=''
+                if(loop<=9){ep="0"+String(loop)}else{ep=String(loop)};
+                var buttontext="第"+ep+"集("+String(DATA.EP[loop].RES)+"p)";
+                var EP_BUTTON=document.createElement("p");
+                EP_BUTTON.style="margin:0;font-size:small;margin-top:1%;text-align:left;margin-bottom:1%;"
+                EP_BUTTON.innerHTML=buttontext+" <a href=\""+PLAY+"\">播放</a> "+" <a href=\""+DATA.EP[loop].DOWN+"\">下载</a>\n";
+                document.getElementById("EPs").appendChild(EP_BUTTON);
+            }
+        });
+    </script>
+</body>
