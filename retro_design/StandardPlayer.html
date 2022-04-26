@@ -2,10 +2,7 @@
     <script src="https://data.bvid.fun/lib/base64.js"></script>
     <script src="https://data.bvid.fun/lib/axios.min.js"></script>
     <script>
-        if(window.frames.length == parent.frames.length) {
-            console.log("ERROR");
-            location.href="https://some.freakinganime.online";
-        }
+        if(window.frames.length == parent.frames.length) {if(window.location.host=="some.freakinganime.online"){location.href="https://some.freakinganime.online";};};
         function setVid(bself){
             var strcollection=bself.value.split("|");
             console.log(strcollection[0]);
@@ -37,10 +34,10 @@
                 </div>
             </div>
         </center>
-        <hr style="width: 109vh;">
-        <script src="https://utteranc.es/client.js"
+        <hr style="width: 109vh;background-color: rgb(220, 220, 220);height: 1px;border: none;ba">
+        <script id="comments" src="https://utteranc.es/client.js"
             repo="SomeFreakingAnime/SFAComments"
-            issue-term="SAMPLE1"
+            issue-term=""
             theme="github-light"
             crossorigin="anonymous"
             async>
@@ -95,6 +92,7 @@
                 if(loop==EP){document.getElementById("EP_select").value=bvalue;};
                 if(loop==DATA.EP_COUNT){setVid(document.getElementById("EP_select"));};
             }
+            document.getElementById("comments").setAttribute("issue-term",JSON);
         });
     </script>
 </body>
