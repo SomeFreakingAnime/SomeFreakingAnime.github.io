@@ -1,37 +1,54 @@
 <head>
-    <script src="https://data.bvid.fun/lib/DPlayer.min.js"></script>
     <script src="https://data.bvid.fun/lib/base64.js"></script>
     <script src="https://data.bvid.fun/lib/axios.min.js"></script>
+    <script>
+        if(window.frames.length == parent.frames.length) {
+            console.log("ERROR");
+            location.href="https://some.freakinganime.online";
+        }
+        function setVid(bself){
+            var strcollection=bself.value.split("|");
+            console.log(strcollection[0]);
+            document.getElementById("vplayer").src=strcollection[1];
+            document.getElementById("downbutton").setAttribute("onclick","location.href=\""+strcollection[2]+"\"");
+        };
+    </script>
+    
 </head>
 <body style="margin: 0;background-color: rgba(255, 255, 255, 0.300);">
     <div id="title" style="width: 100%;margin: 0;font-size: small;line-height: 2.5vh;color: black;position:fixed;background-color: #bed5ff;height: 2.5%;">　Player</div>
     <div style="height: 2.5%;"></div>
     <div id="main" style="height: 97.5%;position: fixed;width: 100%;overflow-y: scroll;border-top: solid 1px;">
-        <center><div id="dplayer" style="border: solid 1px;margin: 0;height: 63%;width: 109vh;margin-top: 5%;"></div></center>
+        <center><video id="vplayer" style="border: solid 1px;margin: 0;width: 109vh;margin-top: 5%;" controls src="https://data.bvid.fun/Sample.mp4" controllist="nodownload">抱歉 您的浏览器不支持HTML5。</video></center>
         <center>
-            <div id="infobar" style="width: 109vh;margin: 0;margin-top: 5%;display: flex;margin-bottom: 5%;">
+            <div id="infobar" style="width: 109vh;margin: 0;margin-top: 5%;display: flex;margin-bottom: 3%;">
                 <div style="width: 20%;"><img id="picdata" src="" alt="#暂无图片#" width="100%"></div>
                 <div style="margin:0;margin-left:2%;width: 50%;border-right: solid 1px rgb(220, 220, 220);height: fit-content;">
                     <h1 id="b_title" style="text-align: left;margin-top: 0;margin-right: 2%;"></h1>
                     <p id="b_status" style="text-align: left;font-size: xx-small;color: rgb(140, 140, 140);margin-right: 2%;"></p>
                     <p id="b_info" style="text-align: left;font-size: smaller;margin-right: 2%;"></p>
                 </div>
-                <div style="margin: 0;width: 28%;visibility: hidden;">
-                    <p style="font-size: xx-small;margin-top: 0;">本资源由 <a id="provider" href=""></a> 提供</p>
-                    <p style="font-size: small;margin-left: 25%;text-align: left;margin-bottom: 1%;">选集：</p>
-                    <div id="EPs" style="margin-left: 25%;height: 65%;overflow-y: scroll;"></div>
+                <div style="margin: 0;width: 28%;">
+                    <p style="font-size: xx-small;">本资源由 <a id="provider" href=""></a> 提供</p>
+                    <div style="width:70%;margin-top: 7%;">
+                        <p style="text-align: left;font-size: xx-small;color: rgb(140, 140, 140);margin: 0;margin-bottom: 2px;">选集：</p>
+                        <div style="height: 20px;"><select id="EP_select" onchange="setVid(this)" style="width: 75%;height: 100%;"></select><button id="downbutton" style="width: 25%;font-size: xx-small;margin-top: 1px;">下载</button></div>
+                    </div>
                 </div>
             </div>
         </center>
+        <hr style="width: 109vh;">
+        <script src="https://utteranc.es/client.js"
+            repo="SomeFreakingAnime/SFAComments"
+            issue-term="SAMPLE1"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+        <div style="width: 100%;height: 5%;"></div>
     </div>
     
     <script>
-        const dp = new DPlayer({
-            container: document.getElementById('dplayer'),
-            video: {
-                url: 'https://data.bvid.fun/Sample.mp4',
-            },
-        });
         function getUrlParam (name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
@@ -43,6 +60,7 @@
         };
         var JSON=getUrlParam("JSON");
         var EP=getUrlParam("EP");
+        if(EP==undefined){EP=1;}else{EP=Number(EP);};
         JSON = "/BANGUMI/"+JSON+".json";
         axios.get(JSON).then(function(response){
             var DATA=eval("("+response.data+")");
@@ -66,14 +84,16 @@
             document.getElementById("provider").href="mailto:"+DATA.PROVIDER;
             document.getElementById("provider").innerText=DATA.PROVIDER_NAME;
             for(loop=1;loop<=DATA.EP_COUNT;loop++){
-                var PLAY;
                 var ep=''
                 if(loop<=9){ep="0"+String(loop)}else{ep=String(loop)};
-                var buttontext="第"+ep+"集("+String(DATA.EP[loop].RES)+"p)";
-                var EP_BUTTON=document.createElement("p");
-                EP_BUTTON.style="margin:0;font-size:small;margin-top:1%;text-align:left;margin-bottom:1%;"
-                EP_BUTTON.innerHTML=buttontext+" <a href=\""+PLAY+"\">播放</a> "+" <a href=\""+DATA.EP[loop].DOWN+"\">下载</a>\n";
-                document.getElementById("EPs").appendChild(EP_BUTTON);
+                var buttontext="EP"+ep+" ("+String(DATA.EP[loop].RES)+"p)";
+                var playb=document.createElement("option");
+                var bvalue=ep+"|"+DATA.EP[loop].VID+"|"+DATA.EP[loop].DOWN;
+                playb.innerText=buttontext;
+                playb.setAttribute("value",bvalue);
+                document.getElementById("EP_select").appendChild(playb);
+                if(loop==EP){document.getElementById("EP_select").value=bvalue;};
+                if(loop==DATA.EP_COUNT){setVid(document.getElementById("EP_select"));};
             }
         });
     </script>

@@ -50,18 +50,10 @@
         window.alert("搜索功能开发中...\n您当前输入的内容为: "+text);
     }
     var box=document.getElementById("mainframe");
-    //box.style.border="solid"
-    //console.log(document.body.offsetHeight);
-    //console.log(document.body.offsetWidth);
-    if(document.body.offsetHeight<600){
-        box.style.width=800;
-        box.style.height=600;
+    
+    if(document.body.offsetWidth<=1200){
+        box.style.margin="1%";
     }
-    else{
-        box.style.height=document.body.offsetHeight;
-        box.style.width=document.body.offsetHeight/3*4;
-    }
-    if(document.body.offsetHeight/3>=document.body.offsetWidth/4){
-        box.style.margin="3%";
-    }
+    box.style.width=1200;
+    box.style.height=900;
 </script>

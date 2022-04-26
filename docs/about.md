@@ -1,12 +1,12 @@
 
 # <center>-----站点还在开发中 抱歉捏-----</center>
+## <center>播放页DEMO已上线 <a href="/retro_design/StandardPlayer.html?JSON=SAMPLE1&EP=1" target="_self">点我<a></center>
 
 ###### <a href="../retro_design/StandardArticleLoader.html?targetId=log&targetName=5pel5b+X" target="_self">日志<a>
 
 # 关于本站
 SomeFreakingAnime是一个致力于分享在线番剧播放资源的索引站。
 ### 网站基于以下开源项目构建:
-[DPlayer](http://dplayer.js.org/zh/)
 
 [Axios](https://www.axios-http.cn/)
 

@@ -1,7 +1,11 @@
 # <center>-----日志-----</center>
+## 2022.4.26
+
+播放页DEMO基本完成
+
 ## 2022.4.24
 
-重写Player页面中。。。 进度：<a href="/retro_design/StandardPlayer.html?JSON=SAMPLE1" target="_self">Demo<a>
+重写Player页面中。。。 
 
 ## 2022.4.19
 
