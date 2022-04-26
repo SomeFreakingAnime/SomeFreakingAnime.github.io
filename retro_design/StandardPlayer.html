@@ -59,6 +59,7 @@
         var EP=getUrlParam("EP");
         if(EP==undefined){EP=1;}else{EP=Number(EP);};
         JSON = "/BANGUMI/"+JSON+".json";
+        document.getElementById("comments").setAttribute("issue-term",JSON);
         axios.get(JSON).then(function(response){
             var DATA=eval("("+response.data+")");
             document.getElementById("picdata").src=DATA.PIC;
@@ -92,7 +93,7 @@
                 if(loop==EP){document.getElementById("EP_select").value=bvalue;};
                 if(loop==DATA.EP_COUNT){setVid(document.getElementById("EP_select"));};
             }
-            document.getElementById("comments").setAttribute("issue-term",JSON);
+            
         });
     </script>
 </body>
