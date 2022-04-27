@@ -95,7 +95,7 @@
             }
 
             setTimeout(() => {
-                if(document.body.offsetWidth!=765) {if(window.location.host=="some.freakinganime.online"){location.href="https://some.freakinganime.online";};}
+                if(window.self === window.top) {if(window.location.host=="some.freakinganime.online"){location.href="https://some.freakinganime.online";};}
                 
             }, 5000); 
             
