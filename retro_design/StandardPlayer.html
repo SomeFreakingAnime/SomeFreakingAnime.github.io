@@ -93,7 +93,12 @@
                 if(loop==EP){document.getElementById("EP_select").value=bvalue;};
                 if(loop==DATA.EP_COUNT){setVid(document.getElementById("EP_select"));};
             }
-            if(window.frames.length == parent.frames.length) {if(window.location.host=="some.freakinganime.online"){location.href="https://some.freakinganime.online";};};
+
+            setTimeout(() => {
+                if(document.body.offsetWidth!=765) {if(window.location.host=="some.freakinganime.online"){location.href="https://some.freakinganime.online";};}
+                
+            }, 5000); 
+            
         });
     </script>
 </body>
