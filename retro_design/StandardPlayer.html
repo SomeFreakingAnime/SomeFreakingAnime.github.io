@@ -2,7 +2,6 @@
     <script src="https://data.bvid.fun/lib/base64.js"></script>
     <script src="https://data.bvid.fun/lib/axios.min.js"></script>
     <script>
-        //
         function setVid(bself){
             var strcollection=bself.value.split("|");
             console.log(strcollection[0]);
@@ -26,7 +25,7 @@
                     <p id="b_info" style="text-align: left;font-size: smaller;margin-right: 2%;"></p>
                 </div>
                 <div style="margin: 0;width: 28%;">
-                    <p style="font-size: xx-small;">本资源由 <a id="provider" href=""></a> 提供</p>
+                    <p style="font-size: xx-small;">本资源由 <a id="provider" href=""></a> 上传</p>
                     <div style="width:70%;margin-top: 7%;">
                         <p style="text-align: left;font-size: xx-small;color: rgb(140, 140, 140);margin: 0;margin-bottom: 2px;">选集：</p>
                         <div style="height: 20px;"><select id="EP_select" onchange="setVid(this)" style="width: 75%;height: 100%;"></select><button id="downbutton" style="width: 25%;font-size: xx-small;margin-top: 1px;">下载</button></div>
@@ -34,7 +33,7 @@
                 </div>
             </div>
         </center>
-        <hr style="width: 109vh;background-color: rgb(220, 220, 220);height: 1px;border: none;ba">
+        <hr style="width: 109vh;background-color: rgb(220, 220, 220);height: 1px;border: none;">
         <script id="comments" src="https://utteranc.es/client.js"
             repo="SomeFreakingAnime/SFAComments"
             issue-term=""
