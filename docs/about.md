@@ -14,7 +14,7 @@ SomeFreakingAnime是一个<em><del>小孩子不懂事写着玩的</del></em> 致
 ### (单方面的)特别鸣谢:
 [Github Pages](https://github.com/) 提供静态网页托管服务
 
-[又拍云](https://www.upyun.com/) ~~[小麦云服](https://own-cloud.cn/)~~ ~~[存储猫](https://www.miaofile.com/)~~ 提供资源托管服务
+[又拍云](https://www.upyun.com/) ~~小麦云服~~ [存储猫](https://www.miaofile.com/) 提供资源托管服务
 
 [蝴蝶计数器](https://www.bfcounter.vip/) 提供网页计数服务
 
