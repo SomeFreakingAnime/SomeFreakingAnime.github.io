@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://data.bvid.fun/lib/webtorrent.min.js"></script>
+    <script src="https://data.bvid.fun/lib/DPlayer.min.js"></script>
+    <title>WebtorrentTest</title>
+    <script>
+        function MagVidChange(MagLink) {
+            dp.switchVideo({ url: MagLink, type: 'webtorrent', });
+        };
+    </script>
+</head>
+
+<body>
+    
+    <center>
+        <div id="dplayer" style="width: 1280px;height:720px;"></div>
+        <!--
+        <button
+            onclick="MagVidChange('magnet:?xt=urn:btih:32d357b1788b38d06b59517e90eea04405294c74&tr=https%3A%2F%2Ftr.bangumi.moe%3A9696%2Fannounce&tr=http%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=udp%3A%2F%2Ftr.bangumi.moe%3A6969%2Fannounce&tr=http%3A%2F%2Fopen.acgtracker.com%3A1096%2Fannounce&tr=http%3A%2F%2F208.67.16.113%3A8000%2Fannounce&tr=udp%3A%2F%2F208.67.16.113%3A8000%2Fannounce&tr=http%3A%2F%2Ftracker.ktxp.com%3A6868%2Fannounce&tr=http%3A%2F%2Ftracker.ktxp.com%3A7070%2Fannounce&tr=http%3A%2F%2Ft2.popgo.org%3A7456%2Fannonce&tr=http%3A%2F%2Fbt.sc-ol.com%3A2710%2Fannounce&tr=http%3A%2F%2Fshare.camoe.cn%3A8080%2Fannounce&tr=http%3A%2F%2F61.154.116.205%3A8000%2Fannounce&tr=http%3A%2F%2Fbt.rghost.net%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.openbittorrent.com%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.publicbt.com%3A80%2Fannounce&tr=http%3A%2F%2Ftracker.prq.to%2Fannounce&tr=http%3A%2F%2Fopen.nyaatorrents.info%3A6544%2Fannounce')">Change</button>
+        -->
+        </center>
+    
+    <script>
+        const dp = new DPlayer({
+            container: document.getElementById('dplayer'),
+            video: {
+                url: 'magnet:?xt=urn:btih:2ed8b387753738d2c964d03944acd46f730fd9df&dn=test.mp4&tr=ws%3A%2F%2Fcloud.bvid.fun%3A8000&tr=udp%3A%2F%2Fcloud.bvid.fun%3A8000&tr=http%3A%2F%2Fcloud.bvid.fun%3A8000%2Fannounce',
+                type: 'webtorrent',
+            },
+            pluginOptions: {
+                webtorrent: {
+                    // webtorrent config
+                },
+            },
+        });
+        console.log(dp.plugins.webtorrent); // WebTorrent 实例
+    </script>
+</body>
