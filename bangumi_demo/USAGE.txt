@@ -1,1 +1,0 @@
-PLAYER.html?JSON=[[JSON file]]&EP=[[Episode number]]
